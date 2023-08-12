@@ -17,7 +17,7 @@ def Sphere_Normals_Transfer():
     merged = 1  #if 1, will add Shrinkwrap modifier to sphere
     mat_num = 2  #number of materials
     leaves_num = 2  #leaves material number
-    debug = 1  #if 1, will keep Sphere and NormalEdit modifiers
+    debug = 0  #if 1, will keep Sphere and NormalEdit modifiers
     
     #*** Snaping cursor and selecting leaves! ***
 
