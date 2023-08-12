@@ -14,9 +14,10 @@ import bpy
 
 def Sphere_Normals_Transfer():
     
+    merged = 1  #if 1, will add Shrinkwrap modifier to sphere
     mat_num = 2  #number of materials
     leaves_num = 2  #leaves material number
-    debug = 0  #if 1, will keep Sphere and NormalEdit modifiers
+    debug = 1  #if 1, will keep Sphere and NormalEdit modifiers
     
     #*** Snaping cursor and selecting leaves! ***
 
@@ -51,6 +52,13 @@ def Sphere_Normals_Transfer():
     sph = bpy.ops.mesh.primitive_uv_sphere_add(radius = radius, location = cursor_location)
     bpy.ops.object.shade_smooth()
     bpy.context.object.name = "NSphere"
+    
+    if merged == 1:
+        bpy.ops.object.modifier_add(type='SHRINKWRAP')
+        bpy.context.object.modifiers["Shrinkwrap"].target = active_obj
+        bpy.context.object.modifiers["Shrinkwrap"].offset = radius/2
+        if debug < 1:
+            bpy.ops.object.modifier_apply(modifier="Shrinkwrap")
 
     # Select all objects except sphere
     bpy.ops.object.select_all(action='DESELECT')
