@@ -3,8 +3,7 @@
 
 1. Hide everything except the tree (may be multiple objects)
 2. Select all of visible object and set any active
-3. Run the [script]((https://github.com/iamNikitaBelous/Sphere_Normals_Transfer/blob/main/Sphere_Normals_Transfer.py))!
-4. [GitHub Pages](https://pages.github.com/)
+3. Run the [script](Sphere_Normals_Transfer/Sphere_Normals_Transfer.py)!
 
 **Tree must have separated material for leaves!**
 **Tree must be only visible object in scene!**
