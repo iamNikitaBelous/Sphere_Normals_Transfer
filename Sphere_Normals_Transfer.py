@@ -88,5 +88,4 @@ def Sphere_Normals_Transfer():
 
     bpy.context.area.ui_type = 'TEXT_EDITOR'
 
-
 Sphere_Normals_Transfer()
