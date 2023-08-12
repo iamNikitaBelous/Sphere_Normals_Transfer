@@ -7,7 +7,7 @@
 2. Select all of visible object and set any active
 3. Run the [script](/Sphere_Normals_Transfer.py)!
 
-![Preview](https://github.com/iamNikitaBelous/Sphere_Normals_Transfer/assets/80423911/1a654df4-8800-4bcc-adee-ccb47d14dc92)
+![Preview](https://github.com/iamNikitaBelous/Sphere_Normals_Transfer/assets/80423911/527f9dc5-7676-410d-aa9a-12a935128700)
 
 **Tree must have separated material for leaves!**
 **Tree must be only visible object in scene!**
