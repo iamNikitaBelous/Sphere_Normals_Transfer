@@ -1,6 +1,6 @@
 # README! and Please, save all of files before running the script!
 # 
-# 1. Hide everything except the tree (tree don't have to be one object)
+# 1. Hide everything except the tree (may be multiple objects)
 # 2. Select all of visible object and set any active
 # 3. Run the script!
 #
