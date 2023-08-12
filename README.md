@@ -8,9 +8,13 @@
 3. Run the [script](/Sphere_Normals_Transfer.py)!
 
 **Tree must have separated material for leaves!**
+
 **Tree must be only visible object in scene!**
-Don't have to deselect object's mesh
-Don't have to set specific active object
-Tree may have other groups and modifiers
+
+Don't have to deselect object's mesh.
+
+Don't have to set specific active object.
+
+Tree may have other groups and modifiers.
 
 ![View](https://github.com/iamNikitaBelous/Sphere_Normals_Transfer/assets/80423911/527f9dc5-7676-410d-aa9a-12a935128700)
