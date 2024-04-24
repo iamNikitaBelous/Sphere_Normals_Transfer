@@ -1,6 +1,6 @@
-# README! and Please, save all of files before running the script!
+# README! Script is experemental, so please, save all of files before running the script!
 # 
-# 1. Hide everything except the tree (may be multiple objects, if so, set merged variable to 0)
+# 1. Hide everything except the tree (if multiple objects, set <merged> variable to 0)
 # 2. Select all of visible object and set any active
 # 3. Run the script!
 #
@@ -76,12 +76,19 @@ def Sphere_Normals_Transfer():
             bpy.ops.object.vertex_group_assign()
             bpy.ops.object.mode_set(mode='OBJECT')
         
-            bpy.ops.object.modifier_add(type='NORMAL_EDIT')
-            bpy.context.object.modifiers["NormalEdit"].target = bpy.data.objects["NSphere"]
-            bpy.context.object.modifiers["NormalEdit"].vertex_group = "LeavesGroup"
-            
+             #bpy.ops.object.modifier_add(type='NORMAL_EDIT')
+             #bpy.context.object.modifiers["NormalEdit"].target = bpy.data.objects["NSphere"]
+             #bpy.context.object.modifiers["NormalEdit"].vertex_group = "LeavesGroup"
+            bpy.ops.object.modifier_add(type='DATA_TRANSFER')
+            bpy.context.object.modifiers["DataTransfer"].object = bpy.data.objects["NSphere"]
+            bpy.context.object.modifiers["DataTransfer"].vertex_group = "LeavesGroup"
+            bpy.context.object.modifiers["DataTransfer"].use_loop_data = True
+            bpy.context.object.modifiers["DataTransfer"].data_types_loops = {'CUSTOM_NORMAL'}
+
+         
             if debug < 1:
-                bpy.ops.object.modifier_apply(modifier="NormalEdit")
+                 #bpy.ops.object.modifier_apply(modifier="NormalEdit")
+                bpy.ops.object.modifier_apply(modifier="DataTransfer")
 
     # Select sphere and delete it
     if debug < 1:
@@ -96,4 +103,20 @@ def Sphere_Normals_Transfer():
 
     bpy.context.area.ui_type = 'TEXT_EDITOR'
 
+
+def Duplicate_Objects_For_Transfer():
+    
+    bpy.ops.object.duplicate()
+    
+    for obj in bpy.context.selected_objects:
+        nName = obj.name[:-4] + "_SphereNormals" #make new name
+        obj.name = nName #assign new name
+        
+    bpy.context.area.ui_type = 'VIEW_3D'
+    bpy.ops.object.hide_view_set(unselected=True) #hide original objects
+    bpy.context.area.ui_type = 'TEXT_EDITOR'
+
+
+# Calling functions
+Duplicate_Objects_For_Transfer()
 Sphere_Normals_Transfer()
