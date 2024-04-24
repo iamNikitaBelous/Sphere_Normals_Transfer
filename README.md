@@ -1,4 +1,4 @@
-# Sphere_Normals_Transfer
+# Sphere_Normals_Transfer Updated
 **This is simple experimental script for Blender to transfer sphere normals to tree leaves!**
 
 **README! Script is experemental, so please, save all of files before running the script!**
